@@ -76,3 +76,90 @@ export const productDataTwo = [
     button: 'Add to Cart',
   },
 ];
+
+export const MenuData = [
+  {
+    id: 'menu1',
+    img: sweet1,
+    alt: 'Donuts',
+    title: 'Delicias de Chocolate',
+    menu: [
+      {
+        name: 'Torta de Chocolate',
+        desc: 'La original torta de la abuela con crema de chocolate',
+        price: 25,
+      },
+      {
+        name: 'Marquesa de Chocolate',
+        desc: 'Base de galletas "María", remojadas en leche, sumergida en crema de chocolate',
+        price: 18.5,
+      },
+      {
+        name: 'Volcán de Chocolate',
+        desc: 'Bizcocho de chocolate con una cremosa salsa de chocolate en el centro.',
+        price: 22.5,
+      },
+      {
+        name: 'Brownie',
+        desc: 'Biscocho de chocolate, con trozos de chocolate.',
+        price: 12.5,
+      },
+    ],
+  },
+  {
+    id: 'menu2',
+    img: sweet2,
+    alt: 'Donuts',
+    title: 'Delicias de Criollas',
+    menu: [
+      {
+        name: 'Quesillo',
+        desc: 'La original torta de la abuela con crema de chocolate',
+        price: 12.5,
+      },
+      {
+        name: 'Arroz con leche',
+        desc: 'Base de galletas "María", remojadas en leche, sumergida en crema de chocolate',
+        price: 18.5,
+      },
+      {
+        name: 'Tres leches',
+        desc: 'Bizcocho de chocolate con una cremosa salsa de chocolate en el centro.',
+        price: 22.5,
+      },
+      {
+        name: 'Dulce de Lechoza',
+        desc: 'Biscocho de chocolate, con trozos de chocolate.',
+        price: 12.5,
+      },
+    ],
+  },
+  {
+    id: 'menu3',
+    img: sweet3,
+    alt: 'Donuts',
+    title: 'Combos Especiales',
+    menu: [
+      {
+        name: 'Combo #1',
+        desc: 'La original torta de la abuela con crema de chocolate',
+        price: 12.5,
+      },
+      {
+        name: 'Combo #2',
+        desc: 'Base de galletas "María", remojadas en leche, sumergida en crema de chocolate',
+        price: 18.5,
+      },
+      {
+        name: 'Combo #3',
+        desc: 'Bizcocho de chocolate con una cremosa salsa de chocolate en el centro.',
+        price: 22.5,
+      },
+      {
+        name: 'Combo #4',
+        desc: 'Biscocho de chocolate, con trozos de chocolate.',
+        price: 12.5,
+      },
+    ],
+  },
+];

@@ -1,13 +1,16 @@
 import Layout from '../../components/Layout';
+import HeroMenu from '../../components/menu/menuhero';
+import styles from './menu.module.scss';
+import { MenuData } from '../../components/Products/data';
+import MenuDetail from '../../components/menu/menu';
 
 const MenuScreen = () => {
   return (
     <Layout title={"Marias's Dessert Menu"}>
-      <section
-        className="h-screen bg-pink-100 flex items-center justify-center"
-        id="menu"
-      >
-        <h1 className="text-4xl t-10">Menu</h1>
+      <section id="menu" className={styles.section}>
+        <HeroMenu />
+        <MenuDetail data={MenuData} />
+        {/* <Especial /> */}
       </section>
     </Layout>
   );
