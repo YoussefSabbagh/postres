@@ -1,0 +1,83 @@
+.section {
+  // background-color: var(--bg-clr);
+  // @media screen and (max-width: 960px) {
+  //   padding: 0 2rem;
+  //   transition: all 0.8s ease;
+  // }
+}
+
+.container {
+  margin-left: var(--mb-1);
+  margin-right: var(--mb-1);
+
+  @media screen and (min-width: 350px) {
+    margin-left: var(--mb-1-5);
+    margin-right: var(--mb-1-5);
+  }
+  @media screen and (min-width: 768px) {
+    max-width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media screen and (min-width: 1024px) {
+    max-width: 990px;
+  }
+}
+
+.home__content {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)),
+    url('../public/images/dulces/bg-2.jpg');
+  background-position: center;
+  background-size: cover;
+
+  padding: 0 calc((100vw - 1300px) / 2);
+}
+
+.home__items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  max-height: 100%;
+  padding: 0 2rem;
+  width: 650px;
+  color: var(--bg-clr);
+  text-transform: uppercase;
+  line-height: 1;
+  font-weight: bold;
+
+  @media screen and (max-width: 650px) {
+    width: 100%;
+  }
+}
+
+.home__title {
+  font-size: clamp(2.5rem, 10vw, 5rem);
+  margin-top: 5rem;
+  margin-bottom: 1rem;
+  box-shadow: 3px 3px var(--cta-clr);
+  letter-spacing: 3px;
+}
+
+.home__description {
+  font-size: clamp(2rem, 2.5vw, 3rem);
+  margin-bottom: 2rem;
+}
+
+.home__button {
+  font-size: 1.4rem;
+  padding: 1rem 4rem;
+  border: none;
+  background: var(--cta-clr);
+  color: var(--bg-clr);
+  transition: 0.2s ease-out;
+
+  &:hover {
+    background: var(--cta-inv-clr);
+    transition: 0.2s ease-out;
+    cursor: pointer;
+    color: var(--tx-clr);
+  }
+}
