@@ -2,22 +2,21 @@ import Layout from '../../components/Layout';
 import styles from './about.module.scss';
 import { getAllPartner } from '../../services';
 
-import Team from '../../components/aboutUs/Team';
+import Values from '../../components/aboutUs/values';
 
-const About = ({ partners }) => {
+const About = () => {
   return (
     <Layout title={'Next Level Partners About US'}>
       <section id="about" className={styles.aboutSection}>
         <div className={styles.aboutContent}>
-          <h1 className={styles.title}>About Us</h1>
+          <h1 className={styles.subtitle}>About Us</h1>
+          <h2 className={styles.title}>The best desserts since 2009</h2>
           <p className={styles.text}>
-            <strong>Next Level Partners </strong> It is a group that helps you
-            establish and define leveraged business strategies and support you
-            in your digital transformation that will allow you to face the new
-            economy..
+            <strong>{"Maria's Desserts"} </strong> has the best cookies and cake
+            made with the radicional recipe of granmother
           </p>
-          <Team partners={partners} />
         </div>
+        <Values />
       </section>
     </Layout>
   );

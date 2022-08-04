@@ -1,0 +1,28 @@
+.grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr 3fr;
+  gap: 2rem;
+}
+
+.card {
+  max-width: 100%;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.image__container {
+  width: 100%;
+  padding: 2rem;
+  height: 400px;
+  position: relative;
+}
+
+.subtitle {
+  color: var(--bg-clr);
+  font-size: var(--big-font-size);
+  margin-bottom: 2rem;
+}

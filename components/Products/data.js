@@ -6,6 +6,8 @@ import product5 from '../../public/images/dulces/product-3.jpg';
 import sweet1 from '../../public/images/dulces/sweet3.jpg';
 import sweet2 from '../../public/images/dulces/sweet-2.jpg';
 import sweet3 from '../../public/images/dulces/sweet-3.jpg';
+import sweet4 from '../../public/images/dulces/sweet4.jpg';
+import sweet5 from '../../public/images/dulces/sweet5.jpg';
 
 export const productData = [
   {
@@ -80,8 +82,8 @@ export const productDataTwo = [
 export const MenuData = [
   {
     id: 'menu1',
-    img: sweet1,
-    alt: 'Donuts',
+    img: sweet4,
+    alt: 'Chocolate Cake',
     title: 'Delicias de Chocolate',
     menu: [
       {
@@ -108,8 +110,8 @@ export const MenuData = [
   },
   {
     id: 'menu2',
-    img: sweet2,
-    alt: 'Donuts',
+    img: sweet5,
+    alt: 'Delicias Criollas',
     title: 'Delicias de Criollas',
     menu: [
       {
