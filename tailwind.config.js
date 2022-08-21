@@ -29,6 +29,8 @@ module.exports = {
           "linear-gradient(to right bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, .6)), url('/images/dulces/bg-2.jpg')",
         'feature-pattern':
           "linear-gradient(to right bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, .1)), url('/images/dulces/featured3.jpg')",
+        'about-pattern':
+          "linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0, rgba(0, 0, 0, .4) 35%, rgba(0, 0, 0, .4) 75%, rgba(0, 0, 0, .7) 90%), url('/images/dulces/bg-1.jpg')",
       },
     },
   },

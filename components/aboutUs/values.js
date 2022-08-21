@@ -1,13 +1,12 @@
 import Image from 'next/image';
-import styles from './values.module.scss';
 
 const Values = () => {
   return (
     <div className="container w-full text-center">
-      <h2 className={styles.subtitle}>Values</h2>
-      <div className={styles.grid}>
-        <div className={styles.card}>
-          <h3 className="text-4xl mb-5">Our History</h3>
+      <h2 className="my-8 text-myPink text-5xl">Nuestros Valores</h2>
+      <div className="grid grid-cols-1 md:grid-cols-8 gap-8">
+        <div className="md:col-span-3 w-full flex flex-col justify-start items-center">
+          <h3 className="text-4xl mb-5 text-myYellow">Nuestra Historia</h3>
           <p className="font-bold mb-1">
             cing jujubes sugar plum ice cream chocolate bar. Oat cake cotton
             candy candy jelly-o sesame snaps. Oat cake bonbon chocolate
@@ -25,20 +24,19 @@ const Values = () => {
             shortbread wafer pie ice cream dessert tiramisu chocolate bear claw.
           </p>
         </div>
-        <div className={styles.card}>
-          <div className={styles.image__container}>
-            <Image
-              src="/images/dulces/chef.png"
-              alt="Chef"
-              width={100}
-              height={100}
-              layout="responsive"
-              objectFit="cover"
-            />
-          </div>
+
+        <div className="md:col-span-2 w-full relative">
+          <Image
+            src="/images/dulces/chef.png"
+            alt="Chef"
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center"
+          />
         </div>
-        <div className={styles.card}>
-          <h3 className="text-4xl mb-5">Our Vision</h3>
+
+        <div className="md:col-span-3 w-full flex flex-col justify-start items-center">
+          <h3 className="text-4xl mb-5 text-myYellow">Nuestra Visión</h3>
           <p className="font-bold mb-2">
             cing jujubes sugar plum ice cream chocolate bar. Oat cake cotton
             candy candy jelly-o sesame snaps. Oat cake bonbon chocolate
