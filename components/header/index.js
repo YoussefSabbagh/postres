@@ -3,59 +3,66 @@ import { useSession } from 'next-auth/react';
 import Link from 'next/link';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
-import styles from './header.module.scss';
 import Dropdown from './Dropdown';
 
 const Header = () => {
   const { status, data: session } = useSession();
-  const [showMobileMenu, SetShowMobileMenu] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
 
   const handleShowToggleMenu = () => {
-    SetShowMobileMenu(!showMobileMenu);
+    setShowMenu(!showMenu);
   };
 
   return (
-    <header className={styles.header}>
+    <header className="fixed w-full h-[80px] z-10 bg-myPink flex justify-between items-center px-4 md:px-10 lg:px-16 transition duration-500">
       <Link href="/">
-        <a className={styles.header__logo}>{"Maria's Desserts"}</a>
+        <a className="text-myRose font-title text-2xl md:text-3xl lg:text-4xl hover:fond-bold">
+          {"Maria's Desserts"}
+        </a>
       </Link>
-      <nav onClick={handleShowToggleMenu}>
-        <ul
-          className={
-            showMobileMenu
-              ? `${styles.nav__items} ${styles.show}`
-              : `${styles.nav__items}`
-          }
+
+      <nav>
+        <button
+          className="hover:text-myRose md:hidden"
           onClick={handleShowToggleMenu}
         >
-          <li className={styles.nav__links}>
+          {!showMenu ? <FaBars size={24} /> : <FaTimes size={24} />}
+        </button>
+        <ul
+          className={`menuMobile ${
+            showMenu ? ' translate-x-0 ' : 'translate-x-full'
+          } md:menuDesktop`}
+        >
+          <li onClick={handleShowToggleMenu} className="headerLink">
             <Link href="/about">
-              <a className={styles.nav__link}>Nosotros</a>
+              <a className="">Nosotros</a>
             </Link>
           </li>
-          <li className={styles.nav__links}>
+          <li onClick={handleShowToggleMenu} className="headerLink">
             <Link href="/menu">
-              <a className={styles.nav__link}>Menu</a>
+              <a className="">Menú</a>
+            </Link>
+          </li>
+          <li onClick={handleShowToggleMenu} className="headerLink">
+            <Link href="/#contact">
+              <a className="">Contacto</a>
             </Link>
           </li>
           {status === 'loading' ? (
             'loading'
           ) : session?.user ? (
-            <li className={styles.nav__links}>
+            <li className="headerLink">
               <Dropdown />
             </li>
           ) : (
-            <li className={styles.nav__links}>
+            <li onClick={handleShowToggleMenu} className="headerLink btn">
               <Link href="/login">
-                <a className={`${styles.nav__link} ${styles.btn}`}>Reservas</a>
+                <a>Reservas</a>
               </Link>
             </li>
           )}
         </ul>
       </nav>
-      <div className={styles.toggle} onClick={handleShowToggleMenu}>
-        {showMobileMenu ? <FaTimes /> : <FaBars />}
-      </div>
     </header>
   );
 };

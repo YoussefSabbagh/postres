@@ -1,186 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Barlow+Semi+Condensed:wght@400;600&family=Shadows+Into+Light&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Barlow+Semi+Condensed:wght@400;600&family=Shadows+Into+Light&display=swap');
-:root {
-  --test: hsl(200, 46%, 82%);
-  --header-height: 80px;
-  --hue-color: 200;
-  --blackClr: #08090aff;
-  --logoClr: #4ed91eff;
-  --whiteClr: #f4f7f5ff;
-  --midnight-blue: #0e0e52ff;
-  --lemon-glacer: #faff00ff;
-  --dangerClr: #ff4242ff;
-  --tx-clr: #1c2732;
-  --bg-clr: #ffcaea;
-  --cta-clr: #e31837;
-  --cta-inv-clr: #ffc500;
+@layer base {
+  :root {
+    --header-height: 80px;
+    --max-width: 1300px;
+  }
 
-  --grayClrLight: #d6e2e0; // para fuentes sobre backgroud oscuro y para bg claro
-  --greenClrLight: #8ab6a9; // para bg en cards
-  --greenClrLight: #8ab6a9; // para bg en cards
-
-  --mainClr1: hsl(var(--hue-color), 70%, 60%);
-  --mainClr2: hsl(var(--hue-color), 90%, 40%);
-  --mainClr3: hsl(var(--hue-color), 40%, 50%);
-  --title-color: hsl(var(--hue-color), 30%, 18%);
-  --text-color: hsl(var(--hue-color), 8%, 45%);
-  --text-color-light: hsl(var(--hue-color), 8%, 65%);
-  --input-color: hsl(var(--hue-color), 70%, 96%);
-  --body-color: hsl(var(--hue-color), 60%, 99%);
-  --black-color: #000;
-  --white-color: #fff;
-  --cta-color: #ff4242ff;
-  --container-color: hsl(var(--hue-color), 57%, 95%);
-  --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
-  --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
-  --ff-title: 'Heebo', sans-serif;
-  --ff-body: 'Heebo', sans-serif;
-  --fw-reg: 400;
-  --fw-bold: 600;
-  --big-font-size: 2rem;
-  --h1-font-size: 1.5rem;
-  --h2-font-size: 1.25rem;
-  --h3-font-size: 1.125rem;
-  --normal-font-size: 0.938rem;
-  --small-font-size: 0.813rem;
-  --smaller-font-size: 0.75rem;
-  --mb-0-25: 0.25rem;
-  --mb-0-5: 0.5rem;
-  --mb-0-75: 0.75rem;
-  --mb-1: 1rem;
-  --mb-1-5: 1.5rem;
-  --mb-2: 2rem;
-  --mb-2-5: 2.5rem;
-  --mb-3: 3rem;
-  --z-tooltip: 100;
-  --z-fixed: 200;
-  --z-modal: 300;
-
-  @media screen and (min-width: 968px) {
-    --big-font-size: 3rem;
-    --h1-font-size: 2.25rem;
-    --h2-font-size: 1.5rem;
-    --h3-font-size: 1.25rem;
-    --normal-font-size: 1rem;
-    --small-font-size: 0.875rem;
-    --smaller-font-size: 0.813rem;
+  html,
+  body {
+    @apply font-body relative text-myBlack;
   }
 }
 
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: 'Barlow Semi Condensed', sans-serif;
-  position: relative;
-}
+@layer components {
+  // Header styles Begin
 
-* {
-  box-sizing: border-box;
-}
-
-.text-shadow {
-  text-shadow: 0px 2px 0px rgb(0 0 0 / 30%);
-}
-
-.adjacent-post {
-  & .arrow-btn {
-    transition: width 300ms ease;
-    width: 50px;
+  .menuDesktop {
+    @apply md:relative md:flex md:space-x-2 md:min-h-0 md:px-0 md:py-0 md:space-y-0 md:translate-x-0 md:text-base;
   }
 
-  &:hover {
-    & .arrow-btn {
-      width: 60px;
-    }
+  .menuMobile {
+    @apply fixed left-0 right-0 min-h-screen px-4 pt-8 space-y-4 bg-myPink text-2xl transform uppercase text-center transition duration-300;
   }
-}
 
-a {
-  @apply text-inherit hover:font-bold;
-}
-
-.card {
-  @apply mb-5 block  rounded-lg border border-gray-200 shadow-md bg-blue-100;
-}
-
-.primary-button {
-  @apply rounded bg-amber-300 py-2 px-4 shadow outline-none hover:bg-amber-400 active:bg-amber-500;
-}
-
-.default-button {
-  @apply rounded bg-gray-200 py-2 px-4 text-black shadow outline-none hover:bg-gray-300 active:bg-gray-400;
-}
-
-input,
-select,
-textarea {
-  @apply rounded border p-2 outline-none ring-amber-200 focus:ring;
-}
-
-.dropdown-link {
-  @apply flex p-2 hover:bg-gray-200;
-  background-color: var(--midnight-blue);
-}
-
-.alert-error {
-  @apply my-3 rounded-lg bg-pink-100 p-3 text-red-700;
-}
-
-.alert-success {
-  @apply my-3 rounded-lg bg-green-100 p-3 text-green-700;
-}
-
-.myBtn {
-  @apply border-2 border-current rounded-lg text-lemon px-2.5 py-2 hover:text-white hover:font-normal duration-500;
-
-  &--blue {
-    @apply text-myBlue-100 hover:bg-myBlue-100;
+  .headerLink {
+    @apply max-w-xs mx-auto p-4 md:p-2 cursor-pointer transition duration-500 hover:text-myRose hover:bg-pink-100;
   }
-}
 
-.card {
-  transform: rotateZ(-1deg);
-}
+  .dropdown-link {
+    @apply max-w-xs flex p-2 hover:bg-pink-100;
+  }
 
-.content {
-  background: rgba(193, 23, 23, 0.23);
-  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
-  margin: 0;
-  position: relative;
-  top: -40px;
-  left: -10px;
-}
-.info {
-  padding: 16px;
-}
-.info h4 {
-  margin: 4px 0;
-  text-transform: uppercase;
-}
-.info p {
-  margin: 0;
-  color: #777;
-}
-.actions {
-  margin-top: 20px;
-  display: flex;
-  justify-content: flex-end;
-}
-.actions a {
-  color: #fff;
-  background: #f01b29;
-  padding: 16px 24px;
-  text-decoration: none;
-}
+  // Header styles End
 
-.summary {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  .card {
+    @apply mb-5 block  rounded-lg border border-gray-200 shadow-md bg-blue-100;
+  }
+
+  .primary-button {
+    @apply rounded bg-amber-300 py-2 px-4 shadow outline-none hover:bg-amber-400 active:bg-amber-500;
+  }
+
+  .default-button {
+    @apply rounded bg-gray-200 py-2 px-4 text-black shadow outline-none hover:bg-gray-300 active:bg-gray-400;
+  }
+
+  .alert-error {
+    @apply my-3 rounded-lg bg-pink-100 p-3 text-red-700;
+  }
+
+  .alert-success {
+    @apply my-3 rounded-lg bg-green-100 p-3 text-green-700;
+  }
+
+  .btn {
+    @apply w-max border-2 border-myRose bg-myRose rounded-full px-4 py-2 text-myWhite font-bold hover:text-myRose hover:bg-myWhite duration-500;
+  }
+
+  .card {
+    transform: rotateZ(-1deg);
+  }
+
+  .content {
+    background: rgba(193, 23, 23, 0.23);
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+    margin: 0;
+    position: relative;
+    top: -40px;
+    left: -10px;
+  }
+  .info {
+    padding: 16px;
+  }
+  .info h4 {
+    margin: 4px 0;
+    text-transform: uppercase;
+  }
+  .info p {
+    margin: 0;
+    color: #777;
+  }
+  .actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .actions a {
+    color: #fff;
+    background: #f01b29;
+    padding: 16px 24px;
+    text-decoration: none;
+  }
+
+  .summary {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+  .menu__title {
+    font-size: clamp(2.5rem, 10vw, 5rem);
+    margin-top: 5rem;
+    margin-bottom: 1rem;
+    box-shadow: 3px 3px var(--cta-clr);
+    letter-spacing: 3px;
+  }
 }
