@@ -41,9 +41,10 @@ const Popular = () => {
         The most popular cake
       </h2>
       {!isLoading && (
-        <div className="mx-auto container w-full">
+        <div className="mx-auto container max-w-4xl">
           {/* Aqui va el carousel con swiper begin */}
           <Swiper
+            className="mx-auto"
             // install Swiper modules
             modules={[Navigation, Pagination, Scrollbar, A11y]}
             breakpoints={{
@@ -57,7 +58,7 @@ const Popular = () => {
               },
               1024: {
                 spaceBetween: 0,
-                slidesPerView: 5,
+                slidesPerView: 6,
               },
             }}
             loop={true}
@@ -66,11 +67,11 @@ const Popular = () => {
           >
             {recipes.map((recipe) => {
               return (
-                <SwiperSlide key={recipe.id} className="w-[100px]">
+                <SwiperSlide key={recipe.id} className="w-[120px]">
                   <img
                     src={recipe.image}
                     alt={recipe.id}
-                    className="object-cover object-center rounded-full w-[200px] h-[200px]"
+                    className="object-cover object-center rounded-full w-[120px] h-[120px]"
                   />
                 </SwiperSlide>
               );

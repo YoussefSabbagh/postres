@@ -64,8 +64,32 @@ export const recipesData = [
       'Si necesita hacer cambios en su sitio web con frecuencia, debería considerar un sitio web autoadministrable, es decir, con manejador de contenidos (Content Management System o CMS en Inglés) en lugar de un sitio web estático. Un sitio web autoadministrable (CMS) te permite a ti o a tus socios/empleados añadir y editar contenidos a partir de un panel de administración que está protegido por contraseña. Estos sistemas son útiles debido a que no es necesario tener conocimientos de HTML para realizar cambios de contenido en su sitio web.',
   },
   {
-    id: '08',
+    id: '09',
     image: '/images/dulces/sweet2.jpg',
+    title: 'Chocolate with cream',
+    price: 2.5,
+    description:
+      'Si necesita hacer cambios en su sitio web con frecuencia, debería considerar un sitio web autoadministrable, es decir, con manejador de contenidos (Content Management System o CMS en Inglés) en lugar de un sitio web estático. Un sitio web autoadministrable (CMS) te permite a ti o a tus socios/empleados añadir y editar contenidos a partir de un panel de administración que está protegido por contraseña. Estos sistemas son útiles debido a que no es necesario tener conocimientos de HTML para realizar cambios de contenido en su sitio web.',
+  },
+  {
+    id: '10',
+    image: '/images/dulces/sweet-4.jpg',
+    title: 'Chocolate with cream',
+    price: 2.5,
+    description:
+      'Si necesita hacer cambios en su sitio web con frecuencia, debería considerar un sitio web autoadministrable, es decir, con manejador de contenidos (Content Management System o CMS en Inglés) en lugar de un sitio web estático. Un sitio web autoadministrable (CMS) te permite a ti o a tus socios/empleados añadir y editar contenidos a partir de un panel de administración que está protegido por contraseña. Estos sistemas son útiles debido a que no es necesario tener conocimientos de HTML para realizar cambios de contenido en su sitio web.',
+  },
+  {
+    id: '11',
+    image: '/images/dulces/sweet-5.jpg',
+    title: 'Chocolate with cream',
+    price: 2.5,
+    description:
+      'Si necesita hacer cambios en su sitio web con frecuencia, debería considerar un sitio web autoadministrable, es decir, con manejador de contenidos (Content Management System o CMS en Inglés) en lugar de un sitio web estático. Un sitio web autoadministrable (CMS) te permite a ti o a tus socios/empleados añadir y editar contenidos a partir de un panel de administración que está protegido por contraseña. Estos sistemas son útiles debido a que no es necesario tener conocimientos de HTML para realizar cambios de contenido en su sitio web.',
+  },
+  {
+    id: '12',
+    image: '/images/dulces/sweet-6.jpg',
     title: 'Chocolate with cream',
     price: 2.5,
     description:
