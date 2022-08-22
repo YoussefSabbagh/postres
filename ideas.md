@@ -2,6 +2,7 @@
 
 Templates:
 1.- https://ingridkuhn.com/themes/pieceofcake_html/?storefront=envato-elements
+2.- https://demo.zytheme.com/granny/elements-daily-specials.html
 
 2.- https://tailgrids.com/components/footers
 

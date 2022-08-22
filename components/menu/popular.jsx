@@ -36,7 +36,7 @@ const Popular = () => {
   }, []);
 
   return (
-    <div className="bg-[#150f0f]">
+    <div className="bg-[#150f0f] pb-8">
       <h2 className="text-4xl text-center text-white py-4 uppercase ">
         The most popular cake
       </h2>

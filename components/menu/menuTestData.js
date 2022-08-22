@@ -1,27 +1,24 @@
-export const recipesData = [
+export const ofertaData = [
   {
     id: '01',
     image: '/images/dulces/featured.jpg',
     title: 'Strawberry Cheesecake',
     price: 7.5,
-    description:
-      'You’ll love how the sauce slowly drips down the cheesecake with every bite,',
+    description: 'Cheesecake con queso crema filadelfia y sirope de fresa',
   },
   {
     id: '02',
     image: '/images/dulces/featured2.jpg',
     title: 'Chocolate Cake',
     price: 5.5,
-    description:
-      'Nuestros desarrollos se centran en proporcionar al visitante una comunicación clara y sencilla del producto o servicio que se quiere comunicar, con fuertes llamadas a la acción para empujarlos a tomar decisiones de compra. Te creamos una administración para que puedas cambiar precios, imágenes o textos de tus productos de forma muy sencilla.',
+    description: 'Deliciosa torta de chocolate con crema y hunedo bizcocho',
   },
   {
     id: '03',
     image: '/images/dulces/featured3.jpg',
     title: 'Lemon Cheescake',
     price: 6.75,
-    description:
-      'No hay mayor premisa para nosotros que trabajar con amor. En nuestra opinión, la creatividad nace de la pasión y la libertad. Así pues, a todo diseño web, le ponemos los cinco sentidos.',
+    description: 'Cheescake de limon con un tope de arandanos ',
   },
   {
     id: '04',
@@ -29,7 +26,38 @@ export const recipesData = [
     title: 'Oreo Gelato with double Chocolate',
     price: 9.99,
     description:
-      'Desarrollamos blogs autogestionables con Wordpress. Edita tus artículos o rediseña de forma sencilla tu blog sin ayuda de un programador y aumenta tu presencia online.',
+      'Mousse de chocolate, helado de vainilla y una cubiera de crema chantilli',
+  },
+];
+export const recipesData = [
+  {
+    id: '01',
+    image: '/images/dulces/featured.jpg',
+    title: 'Strawberry Cheesecake',
+    price: 7.5,
+    description: 'Cheesecake con queso crema filadelfia y sirope de fresa',
+  },
+  {
+    id: '02',
+    image: '/images/dulces/featured2.jpg',
+    title: 'Chocolate Cake',
+    price: 5.5,
+    description: 'Deliciosa torta de chocolate con crema y hunedo bizcocho',
+  },
+  {
+    id: '03',
+    image: '/images/dulces/featured3.jpg',
+    title: 'Lemon Cheescake',
+    price: 6.75,
+    description: 'Cheescake de limon con un tope de arandanos ',
+  },
+  {
+    id: '04',
+    image: '/images/dulces/sweet-1.jpg',
+    title: 'Oreo Gelato with double Chocolate',
+    price: 9.99,
+    description:
+      'Mousse de chocolate, helado de vainilla, helado de chocolate y una cubiera de crema chantilli',
   },
   {
     id: '05',

@@ -17,7 +17,6 @@ export default function Home() {
         <Products heading="Delicias Criollas" data={productDataTwo} />
       </section>
       <Contact />
-      {/* <Services /> */}
     </Layout>
   );
 }
