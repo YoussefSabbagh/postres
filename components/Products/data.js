@@ -1,17 +1,7 @@
-import product1 from '../../public/images/dulces/chocolat-1.jpg';
-import product2 from '../../public/images/dulces/product-2.jpg';
-import product3 from '../../public/images/dulces/product-3.jpg';
-import product4 from '../../public/images/dulces/product-3.jpg';
-import product5 from '../../public/images/dulces/product-3.jpg';
-import sweet1 from '../../public/images/dulces/sweet3.jpg';
-import sweet2 from '../../public/images/dulces/sweet-2.jpg';
-import sweet3 from '../../public/images/dulces/sweet-3.jpg';
-import sweet4 from '../../public/images/dulces/sweet4.jpg';
-import sweet5 from '../../public/images/dulces/sweet5.jpg';
-
 export const productData = [
   {
-    img: product1,
+    id: '01',
+    img: '/images/dulces/chocolat-1.jpg',
     alt: 'Delicias de Chocolate',
     name: 'Torta de Chocolate',
     desc: 'La original torta de la abuela con crema de chocolate',
@@ -19,34 +9,38 @@ export const productData = [
     button: 'Add to Cart',
   },
   {
-    img: product2,
+    id: '02',
+    img: '/images/dulces/chocolat-2.jpg',
     alt: 'Delicias de Chocolate',
-    name: 'Marquesa de Chocolate',
-    desc: 'Base de galletas "María", remojadas en leche, sumergida en crema de chocolate',
+    name: 'Brownie Doble de Chocolate',
+    desc: 'Brownie de chocolate con bañado con chocolate',
     price: '$16.99',
     button: 'Add to Cart',
   },
   {
-    img: product3,
-    alt: 'Pizza',
-    name: 'Volcán de Chocolate',
-    desc: ' Bizcocho de chocolate con una cremosa salsa de chocolate en el centro.',
+    id: '03',
+    img: '/images/dulces/sweet-2.jpg',
+    alt: 'Donuts',
+    name: 'Donuts glaseado de Chocolate',
+    desc: ' Donuts de chocolate glaseado y rellena de Chocolate.',
     price: '$14.99',
     button: 'Add to Cart',
   },
   {
-    img: product4,
+    id: '04',
+    img: '/images/dulces/sweet-4.jpg',
     alt: 'Pizza',
-    name: 'Browne',
+    name: 'Torta de Chocolate',
     desc: ' Bizcocho de chocolate con una cremosa salsa de chocolate en el centro.',
-    price: '$14.99',
+    price: '$34.99',
     button: 'Add to Cart',
   },
   {
-    img: product5,
+    id: '05',
+    img: '/images/dulces/sweet3.jpg',
     alt: 'Other',
-    name: 'Volcán de Chocolate',
-    desc: ' Bizcocho de chocolate con una cremosa salsa de chocolate en el centro.',
+    name: 'Brownie de Chocolate',
+    desc: ' Brownie de chocolate con almendras y frutos secos.',
     price: '$14.99',
     button: 'Add to Cart',
   },
@@ -54,26 +48,29 @@ export const productData = [
 
 export const productDataTwo = [
   {
-    img: sweet2,
-    alt: 'Donuts',
-    name: 'Doughlicious',
-    desc: 'Belgian chocolate glazed donuts covered in icing with sprinkles on top',
+    id: '01',
+    img: '/images/dulces/torta-3-leches.png',
+    alt: 'tresleches',
+    name: 'Torta Tres Leches',
+    desc: 'Bizcocho bañado, como su nombre indica, en tres tipos de leche: leche evaporada, leche condensada y crema de leche.',
     price: '$9.99',
     button: 'Add to Cart',
   },
   {
-    img: sweet3,
-    alt: 'Ice Cream',
-    name: 'Caramel Wonder',
-    desc: 'Vanilla ice cream covered with caramel and chocolate glaze topped with a coco stick',
+    id: '02',
+    img: '/images/dulces/quesillo.jpg',
+    alt: 'quesillo',
+    name: 'Quesillo Caraqueños',
+    desc: 'Este delicioso postre hecho con leche, huevos y azúcar. Tiene la version borracha con ron oriental.',
     price: '$12.99',
     button: 'Add to Cart',
   },
   {
-    img: sweet1,
+    id: '03',
+    img: '/images/dulces/lechoza.webp',
     alt: 'Brownie',
-    name: 'Brownie Bunch',
-    desc: 'Double fudge brownie squares topped with white chocolate pieces and macadamia nuts',
+    name: 'Dulce de Lechoza',
+    desc: 'Es un dulce en almíbar, condimentado con clavos de especias, canela y hojas de higuera.',
     price: '$9.99',
     button: 'Add to Cart',
   },
@@ -82,7 +79,7 @@ export const productDataTwo = [
 export const MenuData = [
   {
     id: 'menu1',
-    img: sweet4,
+    img: '/images/dulces/sweet4.jpg',
     alt: 'Chocolate Cake',
     title: 'Delicias de Chocolate',
     menu: [
@@ -110,7 +107,7 @@ export const MenuData = [
   },
   {
     id: 'menu2',
-    img: sweet5,
+    img: '/images/dulces/sweet5.jpg',
     alt: 'Delicias Criollas',
     title: 'Delicias de Criollas',
     menu: [
@@ -138,7 +135,7 @@ export const MenuData = [
   },
   {
     id: 'menu3',
-    img: sweet3,
+    img: '/images/dulces/sweet-3.jpg',
     alt: 'Donuts',
     title: 'Combos Especiales',
     menu: [
