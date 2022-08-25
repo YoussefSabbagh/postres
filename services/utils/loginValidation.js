@@ -6,9 +6,7 @@ https://github.com/vikas62081/YT/tree/advanceFormValidation
 https://www.youtube.com/watch?v=wfogZfIS03U
 */
 
-import { regExp } from '../../services/utils/regExp';
-
-export const Schema = Yup.object().shape({
+export const schema = Yup.object().shape({
   email: Yup.string()
     .email('Email invalido')
     .typeError('Email invalido')

@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { schema } from './userValidations';
+import { schema } from '../../services/utils/loginValidation';
 
 import { toast } from 'react-toastify';
 
