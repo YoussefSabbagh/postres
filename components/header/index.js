@@ -11,6 +11,8 @@ const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
   const cart = useSelector((state) => state.general);
 
+  console.log(cart);
+
   const handleShowToggleMenu = () => {
     setShowMenu(!showMenu);
   };

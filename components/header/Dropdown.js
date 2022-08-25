@@ -1,4 +1,3 @@
-import { useContext } from 'react';
 import { Menu } from '@headlessui/react';
 import DropdownLink from './DropdownLink';
 import { signOut, useSession } from 'next-auth/react';

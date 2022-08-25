@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { signIn, useSession } from 'next-auth/react';
 
 import Link from 'next/link';
@@ -14,8 +14,6 @@ import { getError } from '../../utils/errors';
 import Layout from '../../components/Layout';
 
 export default function LoginScreen() {
-  const [isError, setIsError] = useState('');
-
   const { data: session } = useSession();
   const router = useRouter();
   const { redirect } = router.query;
