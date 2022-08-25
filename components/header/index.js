@@ -2,16 +2,20 @@ import { useState } from 'react';
 import { useSession } from 'next-auth/react';
 import Link from 'next/link';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { useSelector } from 'react-redux';
 
 import Dropdown from './Dropdown';
 
 const Header = () => {
   const { status, data: session } = useSession();
   const [showMenu, setShowMenu] = useState(false);
+  const cart = useSelector((state) => state.general);
 
   const handleShowToggleMenu = () => {
     setShowMenu(!showMenu);
   };
+
+  console.log('este es el estado ', cart);
 
   return (
     <header className="fixed w-full h-[80px] z-10 bg-myPink flex justify-between items-center px-4 md:px-10 lg:px-16 transition duration-500">
