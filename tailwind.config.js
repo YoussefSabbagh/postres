@@ -33,6 +33,8 @@ module.exports = {
           "linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0, rgba(0, 0, 0, .4) 35%, rgba(0, 0, 0, .4) 75%, rgba(0, 0, 0, .7) 90%), url('/images/dulces/bg-1.jpg')",
         'menu-hero-pattern':
           "linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0, rgba(0, 0, 0, .2) 35%, rgba(0, 0, 0, .3) 75%, rgba(0, 0, 0, .5) 90%), url('/images/dulces/bg-3.jpg')",
+        'login-pattern':
+          "linear-gradient(to bottom, rgba(5, 0, 0, .1) 0,  rgba(5, 0, 0, .2) 90%), url('/images/dulces/bg-3.jpg')",
       },
     },
   },

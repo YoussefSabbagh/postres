@@ -61,7 +61,7 @@ const RegisterScreen = () => {
         <div className="mb-4">
           <label htmlFor="name">Name</label>
           <input
-            className="w-full"
+            className=""
             id="name"
             autoFocus
             {...register('name', {
@@ -77,7 +77,7 @@ const RegisterScreen = () => {
           <label htmlFor="email">Email</label>
           <input
             type="email"
-            className="w-full"
+            className=""
             id="email"
             {...register('email', {
               required: 'Please enter email',
@@ -96,7 +96,7 @@ const RegisterScreen = () => {
           <label htmlFor="password">Password</label>
           <input
             type="password"
-            className="w-full"
+            className=""
             id="password"
             {...register('password', {
               required: 'Please enter password',
@@ -114,7 +114,7 @@ const RegisterScreen = () => {
           <label htmlFor="confirmPassword">Confirm Password</label>
           <input
             type="password"
-            className="w-full"
+            className=""
             id="confirmPassword"
             {...register('confirmPassword', {
               required: 'Please enter confirm password',

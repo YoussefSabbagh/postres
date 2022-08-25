@@ -1,35 +1,48 @@
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
 import { signIn, useSession } from 'next-auth/react';
+
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import styles from './login.module.scss';
-import { Schema as schema } from '../../services/utils/loginValidation';
+import { schema } from './userValidations';
+
+import { toast } from 'react-toastify';
+
+import { getError } from '../../utils/errors';
 import Layout from '../../components/Layout';
 
-const Login = () => {
+export default function LoginScreen() {
+  const [isError, setIsError] = useState('');
+
   const { data: session } = useSession();
   const router = useRouter();
   const { redirect } = router.query;
 
+  const intialValues = {
+    email: '',
+    password: '',
+  };
+
   useEffect(() => {
     if (session?.user) {
-      router.push(redirect || '/post');
+      router.push(redirect || '/');
     }
   }, [router, session, redirect]);
 
-  const [isError, setIsError] = useState('');
-
   const {
-    register,
     handleSubmit,
+    register,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
+    defaultValues: intialValues,
+    mode: 'all',
   });
 
-  const LoginUser = async ({ email, password }) => {
+  const onSubmit = async ({ email, password }) => {
+    console.log(email, password);
     try {
       const result = await signIn('credentials', {
         redirect: false,
@@ -37,60 +50,68 @@ const Login = () => {
         password,
       });
       if (result.error) {
-        setIsError(result.error);
+        toast.error(result.error);
       }
-    } catch (error) {
-      console.error(error.message);
+    } catch (err) {
+      toast.error(getError(err));
     }
   };
 
-  const onSubmit = (valores) => {
-    valores.isUpdated = true;
-    LoginUser(valores);
-  };
-
   return (
-    <Layout title={'Next Level Partners Login Page'}>
-      <section className={styles.section}>
-        <article className={styles.card}>
-          <div className={styles.msgs}>
-            <h1 className={styles.title}>Gracias por volver</h1>
-            {isError && (
-              <p className="text-red-600 text-center bg-pink-200 font-bold rounded py-2">
-                {isError}
-              </p>
-            )}
-          </div>
-          <div className={styles.body}>
-            <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-              <div className={styles.form__field}>
-                <label htmlFor="email">Email</label>
-                <input
-                  {...register('email')}
-                  placeholder="usuario@correo.com"
-                />
-                <p className="text-red-600 text-sm font-bold">
-                  {errors?.email?.message}
-                </p>
-              </div>
+    <Layout title="Login">
+      <section className="bg-fixed text-myBlack bg-login-pattern bg-cover bg-center relative flex flex-col justify-center items-center min-h-[calc(100vh_-_var(--header-height))]">
+        <article className="bg-myPink/70 h-[600px] w-[420px] max-w-full p-4 rounded-xl flex flex-col justify-center items-center ">
+          <h2 className="text-3xl font-title">Gracias por volver</h2>
 
-              <div className={styles.form__field}>
-                <label htmlFor="password">Clave</label>
-                <input {...register('password')} placeholder="Clave" />
-                <p className="text-red-600 text-sm font-bold">
-                  {errors?.password?.message}
-                </p>
-              </div>
-
-              <button className={styles.button} type="submit">
+          <form
+            className="mx-auto max-w-screen-md "
+            onSubmit={handleSubmit(onSubmit)}
+          >
+            <h1 className="mb-4 text-2xl text-center ">Login</h1>
+            <div className="mb-4">
+              <label htmlFor="email" className="font-bold">
+                Email
+              </label>
+              <input
+                type="email"
+                placeholder="jonh@correo.com"
+                autoFocus
+                {...register('email')}
+              />
+              {errors.email && (
+                <p className="text-red-500 text-xs">{errors.email.message}</p>
+              )}
+            </div>
+            <div className="mb-4">
+              <label htmlFor="password" className="font-bold">
+                Clave
+              </label>
+              <input
+                type="password"
+                placeholder="clave"
+                autoFocus
+                {...register('password')}
+              />
+              {errors.password && (
+                <div className="text-red-500 text-xs ">
+                  {errors.password.message}
+                </div>
+              )}
+            </div>
+            <div className="mb-4 text-center">
+              <button className="btn py-4 px-16 border-none rounded-none bg-myRose hover:bg-transparense hover:text-myRose">
                 Ingresar
               </button>
-            </form>
-          </div>
+            </div>
+            <div className="mb-4 ">
+              ¿No esta registrado? &nbsp;
+              <Link href={`/register?redirect=${redirect || '/'}`}>
+                <span className="text-myRose">Registarse</span>
+              </Link>
+            </div>
+          </form>
         </article>
       </section>
     </Layout>
   );
-};
-
-export default Login;
+}

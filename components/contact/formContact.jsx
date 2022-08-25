@@ -99,7 +99,7 @@ const ContactForm = () => {
           <input
             {...register('user_name')}
             placeholder="Nombre:"
-            className="w-full px-2 py-2 outline-none border-transparent focus:border-myRose border-b-4 rounded-md transition duration-500 bg-yellow-100"
+            className=""
           />
         </div>
         <p className="text-sm text-error text-center mb-2">
@@ -109,11 +109,7 @@ const ContactForm = () => {
           <label htmlFor="subject" className=" w-[150px] auto text-right mr-2">
             Asunto:
           </label>
-          <input
-            {...register('subject')}
-            placeholder="Asunto:"
-            className="w-full px-2 py-2 outline-none border-transparent focus:border-myRose border-b-4 rounded-md transition duration-500 bg-yellow-100"
-          />
+          <input {...register('subject')} placeholder="Asunto:" className="" />
         </div>
         <p className="text-sm text-error text-center mb-2">
           {errors.subject?.message}
@@ -125,7 +121,7 @@ const ContactForm = () => {
           <input
             {...register('email')}
             placeholder="ejemplo@correo.com"
-            className="w-full px-2 py-2 outline-none border-transparent focus:border-myRose border-b-4 rounded-md transition duration-500 bg-yellow-100"
+            className=""
           />
         </div>
         <p className="text-sm text-error text-center mb-2">
@@ -140,7 +136,7 @@ const ContactForm = () => {
             cols="30"
             rows="3"
             placeholder="Su mensaje"
-            className="w-full px-2 py-2 outline-none border-transparent focus:border-myRose border-b-4 rounded-md transition duration-500 bg-yellow-100"
+            className=""
           ></textarea>
         </div>
         <p className="text-sm text-error text-center mb-2">

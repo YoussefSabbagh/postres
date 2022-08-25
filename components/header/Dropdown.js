@@ -4,15 +4,11 @@ import DropdownLink from './DropdownLink';
 import { signOut, useSession } from 'next-auth/react';
 import Cookies from 'js-cookie';
 
-import { Store } from '../../utils/context/Store';
-
 const Dropdown = () => {
   const { data: session } = useSession();
-  const { dispatch } = useContext(Store);
 
   const logoutClickHandler = () => {
     Cookies.remove('cart');
-    dispatch({ type: 'CART_RESET' });
     signOut({ callbackUrl: '/' });
   };
 
