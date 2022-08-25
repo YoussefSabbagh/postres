@@ -5,9 +5,17 @@ import Feature from '../components/Feature';
 import Contact from '../components/contact';
 import { productData, productDataTwo } from '../components/Products/data';
 
-// import Services from '../components/home/services';
+// import { getActiveMenu } from '../services/postres';
 
 export default function Home() {
+  // const [allProducts, setAllProducts] = useState([]);
+
+  // useEffect(() => {
+  //   getActiveMenu().then((newProducts) => {
+  //     setAllProducts(newProducts);
+  //   });
+  // }, []);
+
   return (
     <Layout title={"Marias's Dessert Home Page"}>
       <section id="home">

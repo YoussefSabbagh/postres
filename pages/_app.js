@@ -1,13 +1,17 @@
 import '../styles/globals.scss';
 import { SessionProvider, useSession } from 'next-auth/react';
-import { StoreProvider } from '../utils/context/Store';
+// import { StoreProvider } from '../utils/context/Store';
 import { useRouter } from 'next/router';
 import { PayPalScriptProvider } from '@paypal/react-paypal-js';
+
+import { Provider } from 'react-redux';
+import store from '../redux/app/store';
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
     <SessionProvider session={session}>
-      <StoreProvider>
+      <Provider store={store}>
+        {/* <StoreProvider> */}
         <PayPalScriptProvider deferLoading={true}>
           {Component.auth ? (
             <Auth adminOnly={Component.auth.adminOnly}>
@@ -17,7 +21,8 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
             <Component {...pageProps} />
           )}
         </PayPalScriptProvider>
-      </StoreProvider>
+        {/* </StoreProvider> */}
+      </Provider>
     </SessionProvider>
   );
 }

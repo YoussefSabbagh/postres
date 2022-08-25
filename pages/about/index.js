@@ -1,5 +1,4 @@
 import Layout from '../../components/Layout';
-import { getAllPartner } from '../../services';
 
 import Values from '../../components/aboutUs/values';
 
@@ -27,13 +26,3 @@ const About = () => {
 };
 
 export default About;
-
-// Fetch data at build time
-export const getStaticProps = async () => {
-  const partners = (await getAllPartner()) || [];
-
-  return {
-    props: { partners },
-    revalidate: 10,
-  };
-};
