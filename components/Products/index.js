@@ -1,10 +1,17 @@
 import Image from 'next/image';
+import { useDispatch } from 'react-redux';
+import { updateCart } from '../../redux/features/general/generalSlice';
 
 const Products = ({ heading, data }) => {
-  const handleAddToCart = (e) => {
+  const dispatch = useDispatch();
+
+  // const { cart } = useSelector((state) => state.general);
+
+  const handleAddToCart = (e, product) => {
     e.stopPropagation();
-    alert('recuerda hacer la funcion');
+    dispatch(updateCart(product));
   };
+
   return (
     <section className="bg-myBlack text-white px-20 py-20">
       <h2 className="text-center mb-20 text-2xl md:text-3xl lg:text-4xl">
@@ -32,7 +39,7 @@ const Products = ({ heading, data }) => {
                 <p className="mb-2 h-[75px]">{product.desc}</p>
                 <p className="mb-4 text-3xl">{product.price}</p>
                 <button
-                  onClick={handleAddToCart}
+                  onClick={(e) => handleAddToCart(e, product)}
                   className="px-16 py-4 border-none text-lg bg-myRose transition-colors duration-500 hover:bg-myYellow hover:text-myBlack "
                 >
                   {product.button}

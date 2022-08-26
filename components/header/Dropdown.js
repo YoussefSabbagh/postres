@@ -7,7 +7,7 @@ const Dropdown = () => {
   const { data: session } = useSession();
 
   const logoutClickHandler = () => {
-    Cookies.remove('cart');
+    Cookies.remove('MariasCart');
     signOut({ callbackUrl: '/' });
   };
 

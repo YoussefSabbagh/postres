@@ -2,8 +2,8 @@ import { createSlice } from '@reduxjs/toolkit';
 import Cookies from 'js-cookie';
 
 const initialState = {
-  cart: Cookies.get('cart')
-    ? JSON.parse(Cookies.get('cart'))
+  cart: Cookies.get('MariasCart')
+    ? JSON.parse(Cookies.get('MariasCart'))
     : { cartItems: [], shippingAddress: {}, paymentMethod: '' },
 };
 
@@ -11,9 +11,24 @@ const generalSlice = createSlice({
   name: 'general',
   initialState,
   reducers: {
-    updateCard: (state, action) => {
-      state.client.toggleForm = !state.client.toggleForm;
-      state.numOfProduct = action.payload;
+    updateCart: (state, action) => {
+      const newItem = action.payload;
+
+      console.log('Elemento a actualizar', newItem);
+
+      const existItem = state.cart.cartItems.find(
+        (item) => item.id === newItem.id
+      );
+
+      const cartItems = existItem
+        ? state.cart.cartItems.map((item) =>
+            item.name === existItem.name ? newItem : item
+          )
+        : [...state.cart.cartItems, newItem];
+
+      console.log('Elemento', cartItems);
+
+      return { ...state, cart: { ...state.cart, cartItems } };
     },
   },
 });

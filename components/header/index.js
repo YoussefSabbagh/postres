@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSession } from 'next-auth/react';
 import Link from 'next/link';
 import { FaBars, FaShoppingCart, FaTimes } from 'react-icons/fa';
@@ -9,13 +9,16 @@ import Dropdown from './Dropdown';
 const Header = () => {
   const { status, data: session } = useSession();
   const [showMenu, setShowMenu] = useState(false);
-  const cart = useSelector((state) => state.general);
-
-  console.log(cart);
+  const [cartItemsCount, setCartItemsCount] = useState(0);
+  const { cart } = useSelector((state) => state.general);
 
   const handleShowToggleMenu = () => {
     setShowMenu(!showMenu);
   };
+
+  useEffect(() => {
+    setCartItemsCount(cart.cartItems.reduce((a, c) => a + c.quantity, 0));
+  }, [cart.cartItems]);
 
   return (
     <header className="fixed w-full h-[80px] z-10 bg-myPink flex justify-between items-center px-4 md:px-10 lg:px-16 transition duration-500">
@@ -49,8 +52,13 @@ const Header = () => {
         </ul>
 
         <Link href="/cart">
-          <a className="text-xl hover:text-myRose px-4">
+          <a className="relative text-xl hover:text-myRose px-4 mr-2">
             <FaShoppingCart />
+            {cartItemsCount > 0 && (
+              <span className="absolute -top-4 right-0 rounded-full bg-myRose px-2 py-1 text-xs font-bold text-white">
+                {cartItemsCount}
+              </span>
+            )}
           </a>
         </Link>
 
