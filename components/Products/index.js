@@ -1,15 +1,19 @@
 import Image from 'next/image';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { updateCart } from '../../redux/features/general/generalSlice';
 
 const Products = ({ heading, data }) => {
   const dispatch = useDispatch();
 
-  // const { cart } = useSelector((state) => state.general);
+  const { cart } = useSelector((state) => state.general);
 
   const handleAddToCart = (e, product) => {
     e.stopPropagation();
-    dispatch(updateCart(product));
+    const existItem = cart.cartItems.find((prod) => prod.id === product.id);
+    const quantity = existItem ? existItem.quantity + 1 : 1;
+    const newProductOrder = { ...product, quantity };
+
+    dispatch(updateCart(newProductOrder));
   };
 
   return (
