@@ -41,7 +41,7 @@ const Products = ({ heading, data }) => {
               <div className="flex flex-col justify-start items-center px-8 pt-4 pb-8 text-center">
                 <h2 className="text-2xl font-semibold mb-2">{product.name}</h2>
                 <p className="mb-2 h-[75px]">{product.desc}</p>
-                <p className="mb-4 text-3xl">{product.price}</p>
+                <p className="mb-4 text-3xl"> $ {product.price}</p>
                 <button
                   onClick={(e) => handleAddToCart(e, product)}
                   className="px-16 py-4 border-none text-lg bg-myRose transition-colors duration-500 hover:bg-myYellow hover:text-myBlack "
